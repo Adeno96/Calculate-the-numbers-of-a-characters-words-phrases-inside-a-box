@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-----metadata della pagina html----->
+    <meta charset="UTF-08">
+    <meta name="author" content="Adeno">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-----passiamo al lato estetico----->
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/main.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Character counter</li>
+                <li>Settings icon</li>
+            </ul>
+        </nav>
+        <!--Il tag Nav indica una sezione in cui sono presenti elementi su cui è possibile cliccare per saltare a una sezione specifica del sito-->
+        <h1>
+            Analizza il tuo testo in tempo reale.
+        </h1>
+    </header>
+
+
+    <div id="containerText">
+        <textarea id="boxTesto"></textarea>
+    </div>
+
+
+    <div id="underBox">
+        <div id="box-exclude">
+            <input id="exclude" type="checkbox" value="yes">
+            <label for="exclude">Escludi gli spazi</label>
+        </div>
+
+        <div id="boxSetLimit">
+            <input id="setLimit" type="checkbox" value="yes">
+            <label for="setLimit">Poni un limite alle lettere</label>
+        </div>
+
+        <p>Testo</p>
+    </div>
+    <!-----DIV STATISTICHE----->
+    <div id="containerStat">
+        <div id="statUno">Tot caratteri <span id="boxCharacters"></span></div>
+        <div id="statDue">Tot parole <span id="boxWords"></span></div>
+        <div id="statTre">Tot frasi <span id="boxPhrases"></span></div>
+    </div>
+</body>
+
+</html>

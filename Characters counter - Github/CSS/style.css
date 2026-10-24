@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #17191c;
+    color: #cfd2d8;
+    font-family: "Roboto", sans-serif;
+}
+
+nav {
+    /* border: 2px solid brown; */
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 8px;
+
+}
+
+nav ul {
+    /* border: 1px solid yellow; */
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+}
+
+nav ul li {
+    /* border: 1px solid green; */
+    width: 50%;
+    padding: 10px;
+}
+
+nav ul li:last-child {
+    display: flex;
+    justify-content: end;
+}
+
+/*il tag li avrà sempre lo spazio a destra in questo caso perchè html interpreta gli spazi tra un tag di chiusura e un tag di apertura in quel modo; un modo per risolvere è dare l'attributo flex all'elemento padre ul e dargli poi la proprietà gap per eliminare gli spazi :))*/
+
+h1 {
+    /* border: 1px solid red; */
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+#containerText {
+    /* border: 1px solid greenyellow; */
+    border-radius: 10px;
+    max-width: 600px;
+    height: 200px;
+
+    margin: auto;
+    margin-bottom: 8px;
+
+}
+
+#boxTesto {
+    /* border: 1px solid red; */
+    border-radius: 5px;
+    background-color: #272a30;
+    color: #cfd2d8;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    /*texfield prende il 100% dell'elemento padre*/
+}
+
+/*input type="text" setta il browswer in modo che si scriva in una sola riga, perciò l'altezza aumentata all'input non creerebbe altro che un effetto "padding */
+
+#underBox {
+    /* border: 1px solid green; */
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 8px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#underBox input {
+    margin-right: 5px;
+}
+
+#box-exclude {
+    /* border: 1px solid violet; */
+    display: flex;
+    align-items: center;
+    align-content: center;
+
+    width: 33%;
+}
+
+#boxSetLimit {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: 33%;
+}
+
+#underBox p {
+    /* border: 1px solid blue; */
+    width: 33%;
+    text-align: end;
+}
+
+/*------- DIV STATISTICHE -------*/
+#containerStat {
+    /* border: 1px solid royalblue; */
+    margin: auto;
+    width: 600px;
+    height: 140px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* cross axis */
+    justify-content: space-between;
+    /*space-between;space-around;space-evenly ogniuna disribuisce lo spazio extra in maniera diversa*/
+}
+
+#containerStat div {
+    border: 1px solid;
+    border-radius: 8px;
+    width: 180px;
+    height: 60%;
+    padding-left: 10px;
+
+    color: black;
+    align-content: center;
+}
+
+#statUno {
+    background-color: #9370DB;
+}
+
+#statDue {
+    background-color: rgb(243, 169, 31);
+}
+
+#statTre {
+    background-color: rgb(249, 112, 62);
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    display: block;
+    margin: auto;
+}
+
+#invia {
+    border: 2px solid brown;
+    border-radius: 5px;
+    background-color: papayawhip;
+}
+
+#segnala {
+    border: 2px solid purple;
+    border-radius: 5px;
+    background-color: violet;
+}
+
+#acquista {
+    border: 5px solid green;
+}
+#acquista:hover {
+    background-color: lightgreen
+}
+
+
+
+/*con margin auto centriamo un elemento block, distribuendo a dx e sx lo spazio ugualmente*/
