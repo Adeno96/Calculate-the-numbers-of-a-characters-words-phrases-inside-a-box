@@ -22,10 +22,12 @@ boxTesto.addEventListener("input", function () {
     } else {
         frasi = boxTesto.value.match(/[^.!?]+[.!?]+/g).length;
     }
+    //la regex sul metodo match mi permette di individuare le punteggiature a fine frase, e cosi possiamo conteggiare quando abbiamo una frase :)
 
     //considera l'ultima parola di una frase come tale tramite un altro criterio; qui infatti non troveremo " "
     parole = boxTesto.value.split('');
     console.log(parole);
+    console.log(parole.length);
     /*
         if () {
             console.log('abbiamo uno spazio ma non parole');
@@ -45,26 +47,31 @@ boxTesto.addEventListener("input", function () {
     boxPhrases.innerHTML = frasi;
 })
 
-   //GESTIONE EVENTI SPAZI E LIMIT NEL TESTO
-    //variabili
-    let excludeBox = document.getElementById("exclude");
-    console.log(excludeBox);
-    let limitBox = document.getElementById("setLimit");
-    console.log(limitBox);
+//GESTIONE EVENTI SPAZI E LIMITI NEL TESTO
+//variabili
+let excludeBox = document.getElementById("exclude");
+console.log(excludeBox);
+let limitBox = document.getElementById("setLimit");
+console.log(limitBox);
 
-    excludeBox.addEventListener("click", function () {
-        console.log("hai premuto sul quadratino!");
+let testoOriginale = ""; //lasciamo il campo vuoto, se mettiamo boxTesto.value ora viene letto prima che il campo sia compilato questo perche' se messo qui viene letto quando la pagina si carica;
 
-        if (excludeBox.value === true) {
-            console.log("il tasto é attivo")
-            //boxTesto.value.replace(/\s+/g, '') //restuiamo il testo senza spazi
-        } else {
-            console.log("il tasto non é attivo")
-            //non cambia nulla
-        }
-    })
+excludeBox.addEventListener("change", function () {
+    let testoModificato = boxTesto.value.replace(/\s+/g, ''); //assegnamo a questa variabile il testo modificato con la regex perché quest'ultima non puó essere inserita direttamente nel boxTesto tramite replace, questo perché replace() non ha accesso al DOM; mettiamo quindi il suo valore dentro una variabie e la iniettiamo a boxTesto! :)
 
-    //il value é fissato yes nel html, peró dobbiamo considerarlo come un valore booleano con quindi due opzioni intercambiabili, true e false; capire come fare in modo che ritorni in uno dei due e agire di conseguenza nella gestione dell'evento
+    if (excludeBox.checked) {
+        console.log("opzione attiva");
+        console.log(testoModificato);
+        testoOriginale = boxTesto.value;
+        boxTesto.value = boxTesto.value.replace(/\s+/g, '');
+    } else {
+        //run normal code
+        console.log("opzione disattiva");
+        console.log(testoOriginale);
+        boxTesto.value = testoOriginale;
+    }
+});
+
 
 
 
@@ -76,3 +83,4 @@ boxTesto.addEventListener("input", function () {
 //split() tiene il conto appena rileva il criterio indicato, quindi se si mette come criterio un ! conta quanti elementi sono divisi da ! e non il singolo carattere; il counter parte da 1
 
 //match() confronta la stringa con la regex e ritorna null se non ci sono elementi previsti dalla regex; si potrebbe utilizzare al posto di split()anche per quanto riguarda il rilevamento delle parole.
+

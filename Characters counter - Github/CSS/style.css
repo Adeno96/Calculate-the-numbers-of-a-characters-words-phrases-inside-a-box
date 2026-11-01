@@ -148,31 +148,8 @@ h1 {
     background-color: rgb(249, 112, 62);
 }
 
-button {
-    width: 100px;
-    height: 40px;
-    display: block;
-    margin: auto;
-}
+/*CSS A PROVE RANDOMICHE*/
 
-#invia {
-    border: 2px solid brown;
-    border-radius: 5px;
-    background-color: papayawhip;
-}
-
-#segnala {
-    border: 2px solid purple;
-    border-radius: 5px;
-    background-color: violet;
-}
-
-#acquista {
-    border: 5px solid green;
-}
-#acquista:hover {
-    background-color: lightgreen
-}
 
 
 
