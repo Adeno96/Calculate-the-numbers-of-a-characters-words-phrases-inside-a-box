@@ -25,16 +25,25 @@ boxTesto.addEventListener("input", function () {
     //la regex sul metodo match mi permette di individuare le punteggiature a fine frase, e cosi possiamo conteggiare quando abbiamo una frase :)
 
     //considera l'ultima parola di una frase come tale tramite un altro criterio; qui infatti non troveremo " "
-    parole = boxTesto.value.split('');
+    let words = boxTesto.value.split(' ');
+    parole = words.length;
+
+    console.log(words.length);
     console.log(parole);
-    console.log(parole.length);
-    /*
-        if () {
-            console.log('abbiamo uno spazio ma non parole');
+
+
+    //GESTIONE COUNTER PAROLE -- DA VISIONARE
+    boxTesto.addEventListener("input", function () {
+        if (words === '') {
             parole = 0;
         } else {
-            parole = boxTesto.value.split(" ").length;
-        }*/
+            parole = words.length;
+        }
+    })
+    //array rimane con [' '] perciò la proprietà length darà sempre 1, nel if cerchiamo di gestire questa condizione in cui se appare riportiamo come valore 0, ma per qualche motivo non va '-'
+
+
+
 
     //CONTROLLIAMO I VALORI CHE RITORNANO
     console.log(lettere);
@@ -42,9 +51,9 @@ boxTesto.addEventListener("input", function () {
     console.log(frasi);
 
     //METTIAMO IL NUMERO ALL'INTERNO DEL BOX CHE VEDIAMO NEL SITO
-    boxCharacters.innerHTML = lettere;
-    boxWords.innerHTML = parole;
-    boxPhrases.innerHTML = frasi;
+    boxCharacters.innerHTML = lettere; //quello che risulta nel box tot caratteri
+    boxWords.innerHTML = parole; //quello che risulta nel box tot parole
+    boxPhrases.innerHTML = frasi; //box frasi
 })
 
 //GESTIONE EVENTI SPAZI E LIMITI NEL TESTO
@@ -84,3 +93,7 @@ excludeBox.addEventListener("change", function () {
 
 //match() confronta la stringa con la regex e ritorna null se non ci sono elementi previsti dalla regex; si potrebbe utilizzare al posto di split()anche per quanto riguarda il rilevamento delle parole.
 
+/*---------- FUNZIONALITA' DA AGGIUNGERE -----------*/
+//calcolo corretto delle parole, noi calcoliamo ora la lunghezza dell'array che rimane 1 pur non avendo lettere nel boxTesto, questo perchè in quel caso l'array restituisce [' ',] che di per se da come valore 1
+
+//non sarebbe male l'opzione di vedere visivamente la percentuale in un grafico di lettere presenti (es A 30%, B 27% e cosi via)
